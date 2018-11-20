@@ -10,6 +10,11 @@ resource "helm_release" "jaeger" {
   timeout   = "${var.helm_install_timeout}"
 
   set {
+    name  = "tag"
+    value = "1.8.0"
+  }
+
+  set {
     name  = "provisionDataStore.cassandra"
     value = "false"
   }
